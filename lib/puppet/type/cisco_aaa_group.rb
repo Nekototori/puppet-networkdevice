@@ -1,5 +1,6 @@
 require 'puppet/util/monkey_patches_ios'
 require 'puppet/util/host_prop'
+require 'puppet/util/network_device/ipcalc'
 
 Puppet::Type.newtype(:cisco_aaa_group) do
   @doc = "This represents an Authentication, Authorization and Accounting group."
