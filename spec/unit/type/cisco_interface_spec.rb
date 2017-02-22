@@ -4,6 +4,7 @@ require 'spec_helper'
 describe Puppet::Type.type(:cisco_interface) do
 
   let(:name) { 'FastEthernet2/0/1' }
+  let(:described_class) { Puppet::Type.type(:cisco_interface) }
 
   it "should have a 'name' parameter'" do
     described_class.new(:name => name)[:name].should == name

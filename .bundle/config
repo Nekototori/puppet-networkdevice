@@ -1,3 +1,3 @@
 ---
-BUNDLE_PATH: "~/gems"
+BUNDLE_PATH: "/home/david/gems/"
 BUNDLE_DISABLE_SHARED_GEMS: "true"

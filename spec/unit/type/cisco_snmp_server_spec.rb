@@ -2,6 +2,7 @@
 require 'spec_helper'
 
 describe Puppet::Type.type(:cisco_snmp_server) do
+  let(:described_class) { Puppet::Type.type(:cisco_snmp_server) }
 
   let(:name) { :running }
 
