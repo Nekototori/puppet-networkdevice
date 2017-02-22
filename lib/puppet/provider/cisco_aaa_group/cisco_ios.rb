@@ -1,6 +1,6 @@
 require 'puppet/provider/cisco_ios'
 
-Puppet::Type.type(:cisco_aaa_group).provide :cisco_ios, :parent => Puppet::Provider::Cisco_ios do
+Puppet::Type.type(:cisco_aaa_group).provide(:cisco_ios, :parent => Puppet::Provider::Cisco_ios) do
   desc "Cisco Switch / Router Provider for Device Configuration."
   mk_resource_methods
 
