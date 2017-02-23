@@ -6,6 +6,7 @@ describe Puppet::Type.type(:cisco_hsrp_standby_group) do
   let(:parent_interface) { 'Vlan900' }
   let(:standby_group) { '1' }
   let(:name) { "#{parent_interface}/#{standby_group}" }
+  let(:described_class) { Puppet::Type.type(:cisco_hsrp_standby_group) }
 
   it "should have a 'name' parameter'" do
     described_class.new(:name => name)[:name].should == name

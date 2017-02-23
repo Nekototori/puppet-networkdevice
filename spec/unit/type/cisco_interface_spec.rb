@@ -4,6 +4,7 @@ require 'spec_helper'
 describe Puppet::Type.type(:cisco_interface) do
 
   let(:name) { 'FastEthernet2/0/1' }
+  let(:described_class) { Puppet::Type.type(:cisco_interface) }
 
   it "should have a 'name' parameter'" do
     described_class.new(:name => name)[:name].should == name
@@ -339,7 +340,7 @@ describe Puppet::Type.type(:cisco_interface) do
         end
       end
     end
-    
+
     describe :spanning_tree_bpduguard do
       [:present, :absent].each do |value|
         it "should accept #{value.inspect}" do
@@ -351,7 +352,7 @@ describe Puppet::Type.type(:cisco_interface) do
         expect { described_class.new(:name => name, :spanning_tree_bpduguard => 'foobar') }.to raise_error
       end
     end
-    
+
     describe :ip_vrf_forwarding do
       [:absent, "TEST"].each do |value|
         it "should accept #{value.inspect}" do
@@ -363,7 +364,7 @@ describe Puppet::Type.type(:cisco_interface) do
         expect { described_class.new(:name => name, :ip_vrf_forwarding => 'foo bar') }.to raise_error
       end
     end
-    
+
     describe :ip_address do
       [:absent, "1.1.1.1 255.255.255.240"].each do |value|
         it "should accept #{value.inspect}" do
@@ -375,7 +376,7 @@ describe Puppet::Type.type(:cisco_interface) do
         expect { described_class.new(:name => name, :ip_address => 'foo bar') }.to raise_error
       end
     end
-    
+
     describe :dhcp_snooping_limit_rate do
       [:absent, 1, 5, 10].each do |value|
         it "should accept #{value.inspect}" do
